@@ -1,6 +1,19 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
+
+<!--将app-heroes组件里的selectedHero的值赋给app-hero-detail 的hero属性，并绑定
+[hero]属性绑定把父组件HeroListComponent的selectedHero的值传到子组件HeroDetailComponent的hero属性中
+
+1. {{hero.name}}插值表达式在<li>标签中显示组件的hero.name属性的值。
+
+2. [hero]属性绑定把父组件HeroListComponent的selectedHero的值传到子组件HeroDetailComponent的hero属性中。
+
+3. (click) 事件绑定在用户点击英雄的名字时调用组件的selectHero方法。
+
+4. 双向数据绑定是重要的第四种绑定形式，它使用ngModel指令组合了属性绑定和事件绑定的功能   <input [(ngModel)]="hero.name">
+-->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
