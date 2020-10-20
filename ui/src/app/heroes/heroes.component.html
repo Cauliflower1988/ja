@@ -1,6 +1,6 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+  <li *ngFor="let hero of heroes" routerLink="/hero/{{hero.id}}">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
@@ -16,4 +16,3 @@
 
 4. 双向数据绑定是重要的第四种绑定形式，它使用ngModel指令组合了属性绑定和事件绑定的功能   <input [(ngModel)]="hero.name">
 -->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
