@@ -1,2 +1,21 @@
 <h2>{{title}}</h2>
-<app-user-list></app-user-list>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a routerLink="/users">User List</a>
+      </li>
+      <li class="nav-item">
+          <a routerLink="/adduser">New User</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+
+
