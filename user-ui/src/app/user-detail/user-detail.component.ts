@@ -4,6 +4,7 @@ import {UserService} from '../shared/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
@@ -26,4 +27,12 @@ export class UserDetailComponent implements OnInit {
   	this.userService.getUserById(id).subscribe(user=>this.user=user);
   	console.log(this.user);
   }
+  updateUser():void{
+  	this.userService.updateUser(this.user).subscribe(() => this.goBack());
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
 }
