@@ -7,7 +7,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/users', pathMatch: 'full' },
+  { path: '', redirectTo: 'users', pathMatch: 'full' },
   { path: 'users', component: UserListComponent },
   { path: 'user/:id', component: UserDetailComponent },
   { path: 'adduser', component: AddUserComponent }
@@ -15,7 +15,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
